@@ -1,0 +1,127 @@
+body {
+	overflow: hidden;
+}
+
+body,
+input,
+textarea,
+button {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+
+html,
+body,
+p,
+img {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: system-ui, sans-serif;
+	font-size: 75%;
+}
+
+body {
+	display: block;
+	margin: 8px;
+}
+
+html {
+	color: -internal-root-color;
+}
+
+.vertical-menu {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	z-index: 10px;
+}
+
+#loginDialog {
+	width: 350px;
+	max-width: 350px;
+	background-color: #F2F4F5;
+}
+
+#loginDialog {
+	box-shadow: none;
+	background-color: transparent;
+}
+
+.dialog {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: auto;
+}
+
+.dialog {
+	width: 100%;
+	width: calc(100% - 40px);
+	position: absolute;
+	top: 20px;
+	bottom: 20px;
+	/*left: 20px;
+	right: 20px;*/
+	margin: auto;
+	display: none;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	background-color: #F2F4F5;
+}
+
+
+#wrapper {
+	display: flex;
+    /* position: absolute; */
+    /* width: 400px; */
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+#first {
+	border: 1px solid white;
+	width: 50%;
+}
+
+#second {
+	border: 1px solid white;
+	width: 50%;
+}
+
+#clock {
+	background: #0f3854;
+	background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+	background-size: 100%;
+	width: 100%;
+	font-family: 'Share Tech Mono', monospace;
+	color: #ffffff;
+	text-align: center;
+	color: #daf6ff;
+	padding-top: 10px;
+    padding-bottom: 10px;
+	text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+	.time {
+		letter-spacing: 0.05em;
+		font-size: 80px;
+		padding: 5px 0;
+	}
+	.date {
+		letter-spacing: 0.1em;
+		font-size: 24px;
+	}
+	.text {
+		letter-spacing: 0.1em;
+		font-size: 12px;
+		padding: 20px 0 0;
+	}
+}

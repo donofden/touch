@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Touch</title>
+  <meta name="description" content="">
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="css/weather-icons.min.css" rel="stylesheet" id="bootstrap-css">
+  <!-- BookMark Menu CSS -->
+  <link rel="stylesheet" href="css/nestedsidemenu.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/touch.css" />
+  <!-- favicon.ico. Place these in the root directory. -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div class="login-block">
+    <div class="container">
+      <div class="row inner-container-app">
+        <div class="col-md-4 login-sec">
+          <div class="button_container" id="toggle"> <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+          </div>
+          <div class="overlay" id="overlay">
+            <p>TO-DO Add Settings Cuntent Here.</p>
+          </div>
+          <!-- Focus -->
+          <div class="container--lg pt1 pb1">
+            <div class="grid-row grid-row--center">
+              <div class="grid-column mt3 mb2 order-1">
+                <div class="nestedsidemenu">
+                  <ul style="width: 250px;">
+                    <li><a href="#">EMIS</a>
+                    </li>
+                    <li><a href="javascript:vold(0)">CRM</a>
+                      <ul>
+                        <li><a href="javascript:vold(0)">CRM</a>
+                          <ul>
+                            <li><a href="#">CRM TEST</a>
+                            </li>
+                            <li><a href="#">CRM PROD</a>
+                            </li>
+                            <li><a href="#">CRM UAT</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="javascript:vold(0)">RabbitMQ</a>
+                          <ul>
+                            <li><a href="#">TEST</a>
+                            </li>
+                            <li><a href="#">PROD</a>
+                            </li>
+                            <li><a href="#">UAT</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Jenkins</a>
+                        </li>
+                        <li><a href="#">Sub Item 1.3</a>
+                        </li>
+                        <li><a href="#">Sub Item 1.4</a>
+                        </li>
+                        <li><a href="#">Sub Item 1.2</a>
+                        </li>
+                        <li><a href="#">Sub Item 1.3</a>
+                        </li>
+                        <li><a href="#">Sub Item 1.4</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="javascript:vold(0)">PM Tool</a>
+                      <ul>
+                        <li><a href="#">ADO</a>
+                        </li>
+                        <li><a href="#">JIRA</a>
+                        </li>
+                        <li><a href="javascript:vold(0)">Folder 2.3</a>
+                          <ul>
+                            <li><a href="#">Sub Item 2.3.1</a>
+                            </li>
+                            <li><a href="#">Sub Item 2.3.2</a>
+                            </li>
+                            <li><a href="#">Sub Item 2.3.3</a>
+                            </li>
+                            <li><a href="#">Sub Item 2.3.4</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Sub Item 2.4</a>
+                        </li>
+                        <li><a href="#">Sub Item 2.5</a>
+                        </li>
+                        <li><a href="#">Sub Item 2.6</a>
+                        </li>
+                        <li><a href="#">Sub Item 2.7</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Item 3</a>
+                    </li>
+                    <li><a href="javascript:vold(0)">Communication</a>
+                      <ul>
+                        <li><a href="#">WorkPlace FB</a>
+                        </li>
+                        <li><a href="javascript:vold(0)">Intranet</a>
+                          <ul>
+                            <li><a href="#">Intranet Prod</a>
+                            </li>
+                            <li><a href="#">Intranet Test</a>
+                            </li>
+                            <li><a href="javascript:vold(0)">Folder 3.2.3</a>
+                              <ul>
+                                <li><a href="#">Sub Item 3.2.3.1</a>
+                                </li>
+                                <li><a href="#">Sub Item 3.2.3.2</a>
+                                </li>
+                                <li><a href="#">Sub Item 3.2.3.3</a>
+                                </li>
+                                <li><a href="#">Sub Item 3.2.3.4</a>
+                                </li>
+                                <li><a href="#">Sub Item 3.2.3.5</a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li><a href="#">Sub Item 3.2.4</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="https://twitter.com/ddrivegeorge">Twitter</a>
+                    </li>
+                  </ul>
+                  <br style="clear: left" />
+                </div>
+              </div>
+              <div class="grid-column span-1"></div>
+            </div>
+          </div>
+          <h2 class="text-center">Login Now</h2>
+          <form class="login-form">
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+              <input type="text" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+              <input type="password" class="form-control" placeholder="">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"> <small>Remember Me</small>
+              </label>
+              <button type="submit" class="btn btn-login float-right">Submit</button>
+            </div>
+          </form>
+          <div class="copy-text">Created with <i class="fa fa-heart"></i> by <a href="#">DonOfDen</a>
+          </div>
+        </div>
+        <div class="col-md-8 banner-sec">
+          <div class="row">
+            <div class="col-sm-4 nopadding">
+              <div id="card" class="weater">
+                <div class="city-selected">
+                  <article>
+                    <div class="info">
+                      <div class="city"><span>City:</span> Chennai</div>
+                      <div class="night">Night - 22:07 PM</div>
+                      <div class="temp">3°</div>
+                      <div class="wind">  <i class="wi wi-strong-wind"></i>
+                        <span>25 km/h</span>
+                      </div>
+                    </div>
+                    <div class="icon">  <i class="wi wi-night-sleet-storm wi-widget-big"></i>
+                    </div>
+                  </article>
+                </div>
+                <div class="days">
+                  <div class="row row-no-gutter">
+                    <div class="col-md-4">
+                      <div class="day">
+                        <h1>Monday</h1>
+                        <i class="wi wi-night-rain-mix"></i>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="day">
+                        <h1>Tuesday</h1>
+                        <i class="wi wi-night-sleet-storm"></i>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="day">
+                        <h1>Wednesday</h1>
+                        <i class="wi wi-night-rain-mix"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 nopadding">
+              <div id="card" class="weater">
+                <div class="city-selected">
+                  <article>
+                    <div class="info">
+                      <div class="city"><span>City:</span> London</div>
+                      <div class="night">Night - 22:07 PM</div>
+                      <div class="temp">3°</div>
+                      <div class="wind">  <i class="wi wi-strong-wind"></i>
+                        <span>25 km/h</span>
+                      </div>
+                    </div>
+                    <div class="icon">  <i class="wi wi-night-alt-lightning wi-widget-big"></i>
+                    </div>
+                  </article>
+                </div>
+                <div class="days">
+                  <div class="row row-no-gutter">
+                    <div class="col-md-4 ">
+                      <div class="day">
+                        <h1>Monday</h1>
+                        <i class="wi wi-night-alt-sleet-storm"></i>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="day">
+                        <h1>Tuesday</h1>
+                        <i class="wi wi-night-alt-sprinkle"></i>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="day">
+                        <h1>Wednesday</h1>
+                        <i class="wi wi-night-sleet-storm"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 nopadding">
+              <div id="card" class="weater">
+                <div class="city-selected">
+                  <article>
+                    <div class="info">
+                      <div class="city"><span>City:</span> Israel</div>
+                      <div class="night">Night - 22:07 PM</div>
+                      <div class="temp">3°</div>
+                      <div class="wind">  <i class="wi wi-strong-wind"></i>
+                        <span>25 km/h</span>
+                      </div>
+                    </div>
+                    <div class="icon">  <i class="wi wi-strong-wind wi-widget-big"></i>
+                    </div>
+                  </article>
+                </div>
+                <div class="days">
+                  <div class="row row-no-gutter">
+                    <div class="col-md-4">
+                      <div class="day">
+                        <h1>Monday</h1>
+                        <i class="wi wi-strong-wind"></i>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="day">
+                        <h1>Tuesday</h1>
+                        <i class="wi wi-strong-wind"></i>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="day">
+                        <h1>Wednesday</h1>
+                        <i class="wi wi-strong-wind"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-xl-3 card-custom">
+              <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                  <h6 class="m-b-20">Tabs Open</h6>
+                  <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>486</span></h2>
+                  <p class="m-b-0">Today Tabs<span class="f-right">351</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-xl-3 card-custom">
+              <div class="card bg-c-green order-card">
+                <div class="card-block">
+                  <h6 class="m-b-20">Tabs Open</h6>
+                  <h2 class="text-right"><i class="fa fa-rocket f-left"></i><span>486</span></h2>
+                  <p class="m-b-0">Today Tabs<span class="f-right">351</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-xl-3 card-custom">
+              <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                  <h6 class="m-b-20">Tabs Open</h6>
+                  <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>
+                  <p class="m-b-0">Today Tabs<span class="f-right">351</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-xl-3 card-custom">
+              <div class="card bg-c-pink order-card">
+                <div class="card-block">
+                  <h6 class="m-b-20">Tabs Open</h6>
+                  <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>486</span></h2>
+                  <p class="m-b-0">Today Tabs<span class="f-right">351</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-xl-12 card-custom">
+              <blockquote class="quote-card blue-card">
+                <!-- red-card yellow-card green-card-->
+                <p id="quotation">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <cite id="source">
+                  Lorem I psum
+                </cite>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right End-->
+    </div>
+  </div>
+  <script type="text/javascript" src="touch.js"></script>
+</body>
+
+</html>

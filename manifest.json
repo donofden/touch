@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Touch",
+  "description": "Your Bookmarks.",
+  "version": "1",
+  "author": "Aravind Kumar G",
+  "browser_action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "64": "icon64.png",
+      "128": "icon128.png",
+      "512": "icon512.png"
+    },
+    "default_title": "We Make It Easy!",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*", "<all_urls>"],
+    "js": ["popup.js"],
+    "all_frames": true,
+    "run_at": "document_end"
+  }],
+  "background": {
+    "scripts": ["menu.js"]
+  },
+  "chrome_url_overrides": {
+    "newtab": "home.html"
+  },
+  "permissions": ["activeTab", "tabs", "<all_urls>", "bookmarks", "contextMenus", "storage"],
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
