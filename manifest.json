@@ -22,10 +22,10 @@
     "run_at": "document_end"
   }],
   "background": {
-    "scripts": ["menu.js"]
+    "scripts": ["touch.js"]
   },
   "chrome_url_overrides": {
-    "newtab": "home.html"
+    "newtab": "policy.html"
   },
   "permissions": ["activeTab", "tabs", "<all_urls>", "bookmarks", "contextMenus", "storage"],
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
