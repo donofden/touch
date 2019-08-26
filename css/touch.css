@@ -567,3 +567,9 @@ figure {
 		left: 0;
 	}
 }
+
+/* Menu */
+
+.ul-menu {
+	width: 100%;
+}
