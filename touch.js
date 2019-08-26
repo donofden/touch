@@ -194,37 +194,29 @@ function getTodayDate(d) {
 	return today;
 }
 
-function widgetRemainingWeekDay() {
-	var offset = '+1';
-	var el;
-	var nextdays = 3;
-	var dateToManuplate;
-	// create Date object for current location
-	d = new Date();
-	for (i = 1; i <= nextdays; i++) {
-		dateToManuplate = new Date(d.getTime() + (i * 24 * 60 * 60 * 1000))
-		el = "wi-1-day" + i;
-		document.getElementById(el).textContent = getWeekDay(dateToManuplate);
-	}
-	// convert to msec
-	// add local time zone offset
-	// get UTC time in msec
-	utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-	// create new Date object for different city
-	// using supplied offset
-	date = new Date(utc + (3600000 * offset));
-	for (i = 1; i <= nextdays; i++) {
-		dateToManuplate = new Date(date.getTime() + (i * 24 * 60 * 60 * 1000))
-		el = "wi-2-day" + i;
-		document.getElementById(el).textContent = getWeekDay(dateToManuplate);
-	}
-
-	date = new Date(utc + (3600000 * offset));
-	for (i = 1; i <= nextdays; i++) {
-		dateToManuplate = new Date(date.getTime() + (i * 24 * 60 * 60 * 1000))
-		el = "wi-3-day" + i;
-		document.getElementById(el).textContent = getWeekDay(dateToManuplate);
-	}
+function widgetRemainingWeekDay(widgetCity) {
+	widgetCity.forEach(function (city) {
+		var offset = city.offset;
+		var el;
+		var nextdays = 3;
+		var dateToManuplate;
+		// create Date object for current location
+		d = new Date();
+		if(offset != "0"){
+			// convert to msec
+			// add local time zone offset
+			// get UTC time in msec
+			utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+			// create new Date object for different city
+			// using supplied offset
+			d = new Date(utc + (3600000 * offset));
+		}
+		for (i = 1; i <= nextdays; i++) {
+			dateToManuplate = new Date(d.getTime() + (i * 24 * 60 * 60 * 1000))
+			el = "wi-"+city.id+"-day" + i;
+			document.getElementById(el).textContent = getWeekDay(dateToManuplate);
+		}
+	});
 }
 
 /* Weather Wedget */
@@ -297,14 +289,15 @@ setTimeout(function () {
 }, 1000);
 /* Show time in Widget */
 showTime();
-/* Update upcoming days in widget */
-widgetRemainingWeekDay();
 
 var widgetCity = [
     { id: '1', city: 'Chennai', country:'IN', offset: "0" },
 	{ id: '2', city: 'London', country:'UK', offset: "+1" },
 	{ id: '3', city: 'Sheffield', country:'UK', offset: "+1" },
 ];
+
+/* Update upcoming days in widget */
+widgetRemainingWeekDay(widgetCity);
 
 /* Weather Wedget */
 getWeatherDetails(widgetCity);
