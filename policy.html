@@ -74,13 +74,16 @@
                   <article>
                     <div class="info">
                       <div class="city"><span>City:</span> Chennai</div>
-                      <div class="night">Night - 22:07 PM</div>
+                      <div class="night" id="MyClockDisplay1">{{ time }}</div>
                       <div class="temp">3°</div>
                       <div class="wind">  <i class="wi wi-strong-wind"></i>
                         <span>25 km/h</span>
                       </div>
                     </div>
-                    <div class="icon">  <i class="wi wi-night-sleet-storm wi-widget-big"></i>
+                    <div class="icon">  
+                      <i class="wi wi-night-sleet-storm wi-widget-big"></i>
+                      <br style="clear: left" /><br style="clear: left" />
+                      <i class="city"><span id="date1">{{ date }}</span></i>
                     </div>
                   </article>
                 </div>
@@ -114,13 +117,16 @@
                   <article>
                     <div class="info">
                       <div class="city"><span>City:</span> London</div>
-                      <div class="night">Night - 22:07 PM</div>
+                      <div class="night" id="MyClockDisplay2">{{ time }}</div>
                       <div class="temp">3°</div>
                       <div class="wind">  <i class="wi wi-strong-wind"></i>
                         <span>25 km/h</span>
                       </div>
                     </div>
-                    <div class="icon">  <i class="wi wi-night-alt-lightning wi-widget-big"></i>
+                    <div class="icon">  
+                      <i class="wi wi-night-alt-lightning wi-widget-big"></i>
+                      <br style="clear: left" /><br style="clear: left" />
+                      <i class="city"><span id="date2">{{ date }}</span></i>
                     </div>
                   </article>
                 </div>
@@ -161,6 +167,8 @@
                       </div>
                     </div>
                     <div class="icon">  <i class="wi wi-strong-wind wi-widget-big"></i>
+                      <br style="clear: left" /><br style="clear: left" />
+                      <i class="city"><span>26-7-2019</span></i>
                     </div>
                   </article>
                 </div>
