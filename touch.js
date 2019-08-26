@@ -70,7 +70,10 @@ function storeGet(key) {
 	});
 }
 
-bookmarkArray = [];
+bookmarkArray = {};
+arraykey = []
+
+data = { "programs": [ { "name":"zonealarm", "price":"500" }, { "name":"kaspersky", "price":"200" } ], "programs1": [ { "name":"zonealarm", "price":"500" }, { "name":"kaspersky", "price":"200" } ]  };
 var parentID;
 
 function getBookmarks() {
@@ -82,7 +85,8 @@ function getBookmarks() {
 			processNode(item);
 		});
 	})
-	console.log(bookmarkArray);
+	//console.log(bookmarkArray);
+	//updateMenu()
 }
 
 function processNode(node, parent) {
@@ -117,4 +121,39 @@ function processNode(node, parent) {
 		//console.log("Title: "+ node.title+" URL:"+ node.url);
 	}
 }
+
 getBookmarks();
+// This time out is to overcome "value below was evaluated just now" this error
+setTimeout(function() {
+	updateMenu();
+}, 1000);
+
+function updateMenu(){
+	$.each(bookmarkArray, function( key, value ) {
+		var childMenu;
+
+		if(value.children){
+			// Level One
+			childMenu = '<li><a href="#">'+value.title+'</a><ul>';
+			$.each(value.children, function( ckey, cvalue ) {
+				if(cvalue.children){// Level Two
+					childMenu += '<li><a href="#">'+cvalue.title+'</a><ul>';
+
+					$.each(cvalue.children, function( sckey, scvalue ) {
+						// Level Three
+						childMenu += '<li><a href="'+scvalue.url+'">'+scvalue.title+'</a></li>';
+					});
+					childMenu += '</ul>';
+				} else {
+					childMenu += '<li><a href="'+cvalue.url+'">'+cvalue.title+'</a>';
+				}
+				childMenu += '</li>';
+			});
+
+			childMenu += '</ul></li>';
+			$(".ul-menu").append(childMenu);
+		} else {
+			$(".ul-menu").append('<li><a href="#">'+value.title+'</a></li>');
+		}
+	});
+}
