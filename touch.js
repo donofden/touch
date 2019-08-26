@@ -171,13 +171,13 @@ function updateMenu(){
 function showTime(){
     var offset = '+1';
     // create Date object for current location
-	d = new Date();
-	
+    d = new Date();
+
     time = calculateTime(d);
 	date = getTodayDate(d);
 	weekDay = getWeekDay(d);
-    document.getElementById("MyClockDisplay1").textContent =  weekDay + ' - '+  time;
-    document.getElementById("date1").innerText = date;
+    document.getElementById("wi-one-clock").textContent =  weekDay + ' - '+  time;
+    document.getElementById("wi-one-date").innerText = date;
     // convert to msec
     // add local time zone offset 
     // get UTC time in msec
@@ -189,8 +189,8 @@ function showTime(){
 	time = calculateTime(date);
 	weekDay = getWeekDay(date);
 	date = getTodayDate(date);
-    document.getElementById("MyClockDisplay2").textContent =  weekDay + ' - '+  time;
-    document.getElementById("date2").innerText = date;
+    document.getElementById("wi-two-clock").textContent =  weekDay + ' - '+  time;
+    document.getElementById("wi-two-date").innerText = date;
     
     setTimeout(showTime, 1000);
 }
@@ -225,10 +225,38 @@ function getWeekDay(d){
 
 function getTodayDate(d){
     var today;
-    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     today = d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear(); // + " " + days[d.getDay()]
 
-	return today;
+return today;
 }
 
 showTime();
+
+function widgetRemainingWeekDay(){
+	var offset = '+1';
+	var el;
+	var nextdays = 3;
+	var dateToManuplate;
+    // create Date object for current location
+	d = new Date();
+
+	for (i = 1; i <= nextdays; i++) {
+		dateToManuplate = new Date(d.getTime()+(i*24*60*60*1000))
+		el = "wi-one-day"+i;
+		document.getElementById(el).textContent = getWeekDay(dateToManuplate);
+	}
+    // convert to msec
+    // add local time zone offset
+    // get UTC time in msec
+    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+    // create new Date object for different city
+    // using supplied offset
+	date = new Date(utc + (3600000*offset));
+	for (i = 1; i <= nextdays; i++) {
+		dateToManuplate = new Date(date.getTime()+(i*24*60*60*1000))
+		el = "wi-two-day"+i;
+		document.getElementById(el).textContent = getWeekDay(dateToManuplate);
+	}
+}
+widgetRemainingWeekDay();
