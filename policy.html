@@ -73,17 +73,17 @@
                 <div class="city-selected">
                   <article>
                     <div class="info">
-                      <div class="city"><span>City:</span> Chennai</div>
-                      <div class="night" id="wi-one-clock">{{ time }}</div>
-                      <div class="temp">3°</div>
+                        <div class="city" id="wi-1-weather-city"><span>City:</span></div>
+                      <div class="night" id="wi-1-clock">{{ time }}</div>
+                      <div class="temp"><span id="wi-1-weather-temperature">-</span>°</div>
                       <div class="wind">  <i class="wi wi-strong-wind"></i>
-                        <span>25 km/h</span>
+                        <span><span id="wi-1-weather-wind">-</span> km/h</span>
                       </div>
                     </div>
                     <div class="icon">
-                      <i class="wi wi-night-sleet-storm wi-widget-big"></i>
+                      <i class="wi wi-night-sleet-storm wi-widget-big" id="wi-1-weather-icon"></i>
                       <br style="clear: left" /><br style="clear: left" />
-                      <i class="city"><span id="wi-one-date">{{ date }}</span></i>
+                      <i class="city"><span id="wi-1-date">{{ date }}</span></i>
                     </div>
                   </article>
                 </div>
@@ -91,19 +91,19 @@
                   <div class="row row-no-gutter">
                     <div class="col-md-4">
                       <div class="day">
-                        <h1 id="wi-one-day1">Monday</h1>
+                        <h1 id="wi-1-day1">Monday</h1>
                         <i class="wi wi-night-rain-mix"></i>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="day">
-                        <h1 id="wi-one-day2">Tuesday</h1>
+                        <h1 id="wi-1-day2">Tuesday</h1>
                         <i class="wi wi-night-sleet-storm"></i>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="day">
-                        <h1 id="wi-one-day3">Wednesday</h1>
+                        <h1 id="wi-1-day3">Wednesday</h1>
                         <i class="wi wi-night-rain-mix"></i>
                       </div>
                     </div>
@@ -116,17 +116,17 @@
                 <div class="city-selected">
                   <article>
                     <div class="info">
-                      <div class="city"><span>City:</span> London</div>
-                      <div class="night" id="wi-two-clock">{{ time }}</div>
-                      <div class="temp">3°</div>
-                      <div class="wind">  <i class="wi wi-strong-wind"></i>
-                        <span>25 km/h</span>
+                      <div class="city" id="wi-2-weather-city"><span>City:</span></div>
+                      <div class="night" id="wi-2-clock">{{ time }}</div>
+                      <div class="temp"><span id="wi-2-weather-temperature">-</span>°</div>
+                      <div class="wind"><i class="wi wi-strong-wind"></i>
+                        <span><span id="wi-2-weather-wind">-</span> km/h</span>
                       </div>
                     </div>
                     <div class="icon">  
-                      <i class="wi wi-night-alt-lightning wi-widget-big"></i>
+                      <i class="wi wi-night-alt-lightning wi-widget-big" id="wi-2-weather-icon"></i>
                       <br style="clear: left" /><br style="clear: left" />
-                      <i class="city"><span id="wi-two-date">{{ date }}</span></i>
+                      <i class="city"><span id="wi-2-date">{{ date }}</span></i>
                     </div>
                   </article>
                 </div>
@@ -134,19 +134,19 @@
                   <div class="row row-no-gutter">
                     <div class="col-md-4 ">
                       <div class="day">
-                        <h1 id="wi-two-day1">Monday</h1>
+                        <h1 id="wi-2-day1">Monday</h1>
                         <i class="wi wi-night-alt-sleet-storm"></i>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="day">
-                        <h1 id="wi-two-day2">Tuesday</h1>
+                        <h1 id="wi-2-day2">Tuesday</h1>
                         <i class="wi wi-night-alt-sprinkle"></i>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="day">
-                        <h1 id="wi-two-day3">Wednesday</h1>
+                        <h1 id="wi-2-day3">Wednesday</h1>
                         <i class="wi wi-night-sleet-storm"></i>
                       </div>
                     </div>
@@ -159,40 +159,40 @@
                 <div class="city-selected">
                   <article>
                     <div class="info">
-                      <div class="city"><span>City:</span> Israel</div>
-                      <div class="night">Night - 22:07 PM</div>
-                      <div class="temp">3°</div>
+                        <div class="city" id="wi-3-weather-city"><span>City:</span></div>
+                        <div class="night" id="wi-3-clock">{{ time }}</div>
+                      <div class="temp"><span id="wi-3-weather-temperature">-</span>°</div>
                       <div class="wind">  <i class="wi wi-strong-wind"></i>
-                        <span>25 km/h</span>
+                        <span><span id="wi-3-weather-wind">-</span> km/h</span>
                       </div>
                     </div>
-                    <div class="icon">  <i class="wi wi-strong-wind wi-widget-big"></i>
+                    <div class="icon">  <i class="wi wi-strong-wind wi-widget-big" id="wi-3-weather-icon"></i>
                       <br style="clear: left" /><br style="clear: left" />
-                      <i class="city"><span>26-7-2019</span></i>
+                      <i class="city"><span id="wi-3-date">{{ date }}</span></i>
                     </div>
                   </article>
                 </div>
                 <div class="days">
-                  <div class="row row-no-gutter">
-                    <div class="col-md-4">
-                      <div class="day">
-                        <h1>Monday</h1>
-                        <i class="wi wi-strong-wind"></i>
+                    <div class="row row-no-gutter">
+                        <div class="col-md-4 ">
+                          <div class="day">
+                            <h1 id="wi-3-day1">Monday</h1>
+                            <i class="wi wi-night-alt-sleet-storm"></i>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="day">
+                            <h1 id="wi-3-day2">Tuesday</h1>
+                            <i class="wi wi-night-alt-sprinkle"></i>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="day">
+                            <h1 id="wi-3-day3">Wednesday</h1>
+                            <i class="wi wi-night-sleet-storm"></i>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="day">
-                        <h1>Tuesday</h1>
-                        <i class="wi wi-strong-wind"></i>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="day">
-                        <h1>Wednesday</h1>
-                        <i class="wi wi-strong-wind"></i>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

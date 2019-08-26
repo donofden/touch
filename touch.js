@@ -145,8 +145,8 @@ function showTime() {
 	time = calculateTime(d);
 	date = getTodayDate(d);
 	weekDay = getWeekDay(d);
-	document.getElementById("wi-one-clock").textContent = weekDay + ' - ' + time;
-	document.getElementById("wi-one-date").innerText = date;
+	document.getElementById("wi-1-clock").textContent = weekDay + ' - ' + time;
+	document.getElementById("wi-1-date").innerText = date;
 	// convert to msec
 	// add local time zone offset 
 	// get UTC time in msec
@@ -157,8 +157,10 @@ function showTime() {
 	time = calculateTime(date);
 	weekDay = getWeekDay(date);
 	date = getTodayDate(date);
-	document.getElementById("wi-two-clock").textContent = weekDay + ' - ' + time;
-	document.getElementById("wi-two-date").innerText = date;
+	document.getElementById("wi-2-clock").textContent = weekDay + ' - ' + time;
+	document.getElementById("wi-2-date").innerText = date;
+	document.getElementById("wi-3-clock").textContent = weekDay + ' - ' + time;
+	document.getElementById("wi-3-date").innerText = date;
 	setTimeout(showTime, 1000);
 }
 
@@ -188,7 +190,7 @@ function getWeekDay(d) {
 
 function getTodayDate(d) {
 	var today;
-	today = d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear(); // + " " + days[d.getDay()]
+	today = d.getDate() + "-" + (d.getMonth()+1) + "-" + d.getFullYear(); // + " " + days[d.getDay()]
 	return today;
 }
 
@@ -201,7 +203,7 @@ function widgetRemainingWeekDay() {
 	d = new Date();
 	for (i = 1; i <= nextdays; i++) {
 		dateToManuplate = new Date(d.getTime() + (i * 24 * 60 * 60 * 1000))
-		el = "wi-one-day" + i;
+		el = "wi-1-day" + i;
 		document.getElementById(el).textContent = getWeekDay(dateToManuplate);
 	}
 	// convert to msec
@@ -213,10 +215,76 @@ function widgetRemainingWeekDay() {
 	date = new Date(utc + (3600000 * offset));
 	for (i = 1; i <= nextdays; i++) {
 		dateToManuplate = new Date(date.getTime() + (i * 24 * 60 * 60 * 1000))
-		el = "wi-two-day" + i;
+		el = "wi-2-day" + i;
+		document.getElementById(el).textContent = getWeekDay(dateToManuplate);
+	}
+
+	date = new Date(utc + (3600000 * offset));
+	for (i = 1; i <= nextdays; i++) {
+		dateToManuplate = new Date(date.getTime() + (i * 24 * 60 * 60 * 1000))
+		el = "wi-3-day" + i;
 		document.getElementById(el).textContent = getWeekDay(dateToManuplate);
 	}
 }
+
+/* Weather Wedget */
+function getIconBasedOnTime(city, offset){
+	// Find Day/Night for icon
+	var d = new Date();
+	if((city == "Sheffield")||(city == "London")){
+		utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+		// create new Date object for different city
+		// using supplied offset
+		d = new Date(utc + (3600000 * offset));
+	}
+	var hour = d.getHours();
+	if (hour > 6 && hour < 20) {
+		//Day time
+		return "day"
+	} else {
+		//Night time
+		return "night"
+	}
+}
+
+/* Weather Wedget */
+function getWeatherDetails(widgetCity){
+	widgetCity.forEach(function (city) {
+		var temperature, weather, wind;
+		var url = "https://api.openweathermap.org/data/2.5/weather?q="+city.city+','+city.country+"&appid=a32cb81a7b917d2081ba0f8f11a6c48f&units=metric";
+		var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": url,
+			"method": "GET",
+			"headers": {
+				"cache-control": "no-cache",
+				"Postman-Token": "298462b4-5efe-4f48-943a-8df91488ffdb"
+			}
+		}
+		$.ajax(settings).done(function (response) {
+			$.each(response, function (ckey, cvalue) {
+				if(ckey == "main"){
+					temperature = cvalue.temp;
+				}
+				if(ckey == "weather"){
+					weather = cvalue[0].id;
+				}
+				if(ckey == "wind"){
+					// Meter/Sec to KM/Hour - multiply the speed value by 3.6
+					wind = cvalue.speed*3.6;
+				}
+			});
+			icon = getIconBasedOnTime(city.city, city.offset);
+			$("#wi-"+city.id+"-weather-icon").removeClass();
+			$("#wi-"+city.id+"-weather-icon").addClass("wi wi-owm-"+icon+"-"+weather+" wi-widget-big");
+			document.getElementById("wi-"+city.id+"-weather-city").innerHTML = '<span>City:</span>'+ city.city;
+			document.getElementById("wi-"+city.id+"-weather-temperature").textContent = Math.round(temperature);
+			document.getElementById("wi-"+city.id+"-weather-wind").textContent = Math.round(wind);
+		});
+	});
+}
+
 /* Random Quotes */
 randomQuote();
 //document.querySelector("button").addEventListener('click', randomQuote)
@@ -231,3 +299,12 @@ setTimeout(function () {
 showTime();
 /* Update upcoming days in widget */
 widgetRemainingWeekDay();
+
+var widgetCity = [
+    { id: '1', city: 'Chennai', country:'IN', offset: "0" },
+	{ id: '2', city: 'London', country:'UK', offset: "+1" },
+	{ id: '3', city: 'Sheffield', country:'UK', offset: "+1" },
+];
+
+/* Weather Wedget */
+getWeatherDetails(widgetCity);
