@@ -133,15 +133,36 @@ function updateMenu(){
 		var childMenu;
 
 		if(value.children){
-			// Level One
+			// Level ONE
 			childMenu = '<li><a href="#">'+value.title+'</a><ul>';
 			$.each(value.children, function( ckey, cvalue ) {
-				if(cvalue.children){// Level Two
+				if(cvalue.children){
+					// Level TWO
 					childMenu += '<li><a href="#">'+cvalue.title+'</a><ul>';
-
 					$.each(cvalue.children, function( sckey, scvalue ) {
-						// Level Three
-						childMenu += '<li><a href="'+scvalue.url+'">'+scvalue.title+'</a></li>';
+						// Level THREE
+						if(scvalue.children){
+							// This is to overcome the Undefined issue for parent URL
+							if (scvalue.url == null){
+								childMenu += '<li><a href="#">'+scvalue.title+'</a><ul>';
+							} else{
+								childMenu += '<li><a href="'+scvalue.url+'">'+scvalue.title+'</a><ul>';
+							}
+						
+							$.each(scvalue.children, function( ssckey, sscvalue ) {
+								// Level FOUR
+								childMenu += '<li><a href="'+sscvalue.url+'">'+sscvalue.title+'</a><li>';
+							});
+							childMenu += '</ul>';
+						} else {
+							// This is to overcome the Undefined issue for parent URL
+							if (scvalue.url == null){
+								childMenu += '<li><a href="#">'+scvalue.title+'</a></li>';
+							} else{
+								childMenu += '<li><a href="'+scvalue.url+'">'+scvalue.title+'</a></li>';
+							}
+						}
+						childMenu += '</li>';
 					});
 					childMenu += '</ul>';
 				} else {
