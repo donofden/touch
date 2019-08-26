@@ -1,3 +1,4 @@
+/* Random Quotes */
 const quotes = [
 	{ 
 		"quote" : "The only sin is ignorance", 
@@ -44,11 +45,13 @@ randomQuote();
 //document.querySelector("button").addEventListener('click', randomQuote)
 //# sourceURL=pen.js
 
+/* Setting */
 $('#toggle').click(function() {
-   $(this).toggleClass('active');
-   $('#overlay').toggleClass('open');
-  });
+	$(this).toggleClass('active');
+	$('#overlay').toggleClass('open');
+});
 
+/* Chrome Storage */
 function storeSet(key) {
     var testPrefs = JSON.stringify({
             'val': 10
@@ -70,49 +73,33 @@ function storeGet(key) {
 	});
 }
 
+/* Bookmarks */
 bookmarkArray = {};
-arraykey = []
-
-data = { "programs": [ { "name":"zonealarm", "price":"500" }, { "name":"kaspersky", "price":"200" } ], "programs1": [ { "name":"zonealarm", "price":"500" }, { "name":"kaspersky", "price":"200" } ]  };
 var parentID;
 
 function getBookmarks() {
-	//var bookmarkArray = {};
 	chrome.bookmarks.getTree(function(itemTree){
-		//console.log(itemTree);
 		itemTree.forEach(function(item){
-			//console.log(item);
 			processNode(item);
 		});
 	})
-	//console.log(bookmarkArray);
-	//updateMenu()
 }
 
 function processNode(node, parent) {
     // recursively process child nodes
     if(node.children) {
-		
-		//console.log(node.title);
-		//console.log(node.children);
-		//console.log(node.children.length);
-		
         node.children.forEach(function(child) {
 			processNode(child);
 		});
 	}
 	if(node.parentId == "1"){
 		parentID = node.id;
-		//bookmarkArray[node.id] = node.title;
-		//console.log(node);
+
 		if(node.children){
 			bookmarkArray[node.id] = {
 				title: node.title,
 				children: node.children
 			};
-			//bookmarkArray[node.id]["title"] = node.title;
-			//bookmarkArray[node.id]['value'] = node.children;
-			//console.log(node);
 		}
 	}
 
@@ -122,7 +109,9 @@ function processNode(node, parent) {
 	}
 }
 
+// Get Bookmarks stored in Chrome
 getBookmarks();
+
 // This time out is to overcome "value below was evaluated just now" this error
 setTimeout(function() {
 	updateMenu();
@@ -131,7 +120,6 @@ setTimeout(function() {
 function updateMenu(){
 	$.each(bookmarkArray, function( key, value ) {
 		var childMenu;
-
 		if(value.children){
 			// Level ONE
 			childMenu = '<li><a href="#">'+value.title+'</a><ul>';
