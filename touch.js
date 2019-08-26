@@ -192,7 +192,7 @@ function showTime(){
     document.getElementById("MyClockDisplay2").textContent =  weekDay + ' - '+  time;
     document.getElementById("date2").innerText = date;
     
-    //setTimeout(showTime, 1000);
+    setTimeout(showTime, 1000);
 }
 
 function calculateTime(date){
