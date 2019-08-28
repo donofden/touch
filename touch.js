@@ -301,3 +301,29 @@ widgetRemainingWeekDay(widgetCity);
 
 /* Weather Wedget */
 getWeatherDetails(widgetCity);
+
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://api.openweathermap.org/data/2.5/forecast?q=chennai,in&appid=a32cb81a7b917d2081ba0f8f11a6c48f&units=metric&cnt=24",
+	"method": "GET",
+	"headers": {
+		"cache-control": "no-cache",
+		"Postman-Token": "a991d841-e759-42af-8d9e-b2b5d5728a77"
+	}
+}
+var weatherArray = [];
+var d = new Date();
+today = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
+$.ajax(settings).done(function (response) {
+	console.log(response.list);
+	response.list.forEach(function (days) {
+		date = days.dt_txt.substring(0,10);
+		console.log(today,date);
+		if(today != date){
+			weatherArray[date] = days.weather[0].id;
+		}
+		//weatherArray.push([date,days.weather[0].id]);
+	});
+	console.log(weatherArray);
+});
