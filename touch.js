@@ -23,6 +23,9 @@ const quotes = [{
 }, {
 	"quote": "When I get a little money I buy books; and if any is left I buy food and clothes",
 	"source": "Desiderius Erasmus"
+}, {
+	"quote": "Fear is a reaction. Courage is a decision.",
+	"source": "Winston S. Churchill"
 }]
 
 function randomQuote() {
