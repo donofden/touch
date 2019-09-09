@@ -27,7 +27,10 @@ const quotes = [{
 	"quote": "Fear is a reaction. Courage is a decision.",
 	"source": "Winston S. Churchill"
 }, {
-	"quote": "Give a Man a Fish, and You Feed Him for a Day. Teach a Man To Fish, and You Feed Him for a Lifetime",
+	"quote": "Give a Man a Fish, and You Feed Him for a Day. Teach a Man To Fish, and You Feed Him for a Lifetime.",
+	"source": "-"
+}, {
+	"quote": "Every next level of your life will demand a different you.",
 	"source": "-"
 }]
 
