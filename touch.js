@@ -32,6 +32,9 @@ const quotes = [{
 }, {
 	"quote": "Every next level of your life will demand a different you.",
 	"source": "-"
+}, {
+	"quote": "Be not afraid of growing slowly, be afraid only of standing still.",
+	"source": "Chinese Proverb"
 }]
 
 function randomQuote() {
