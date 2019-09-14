@@ -35,6 +35,9 @@ const quotes = [{
 }, {
 	"quote": "Be not afraid of growing slowly, be afraid only of standing still.",
 	"source": "Chinese Proverb"
+}, {
+	"quote": "Its going to be heard, but hard dosent not mean impossible.",
+	"source": "-"
 }]
 
 function randomQuote() {
