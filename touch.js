@@ -38,6 +38,9 @@ const quotes = [{
 }, {
 	"quote": "Its going to be heard, but hard dosent not mean impossible.",
 	"source": "-"
+}, {
+	"quote": "Rise above the Strom and you will find the sunshine.",
+	"source": "-"
 }]
 
 function randomQuote() {
