@@ -41,6 +41,9 @@ const quotes = [{
 }, {
 	"quote": "Rise above the Strom and you will find the sunshine.",
 	"source": "-"
+}, {
+	"quote": "Push yourself, because no one else is going to do it for you.",
+	"source": "-"
 }]
 
 function randomQuote() {
